@@ -1,0 +1,360 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: eight_bit_adder.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "eight_bit_adder.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "eight_bit_adder"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : eight_bit_adder
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\Lab 1\Task2\mux21.vhd" into library work
+Parsing entity <mux21>.
+Parsing architecture <Behavioral> of entity <mux21>.
+Parsing VHDL file "E:\Lab 1\Task1\mux.vhd" into library work
+Parsing entity <mux>.
+Parsing architecture <Behavioral> of entity <mux>.
+Parsing VHDL file "E:\Lab 1\Task2\one_bit_alu.vhd" into library work
+Parsing entity <one_bit_alu>.
+Parsing architecture <Behavioral> of entity <one_bit_alu>.
+Parsing VHDL file "E:\Lab 1\Task3\eight_bit_adder.vhd" into library work
+Parsing entity <eight_bit_adder>.
+Parsing architecture <Behavioral> of entity <eight_bit_adder>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <eight_bit_adder> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <one_bit_alu> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\one_bit_alu.vhd" Line 42: <inv> remains a black-box since it has no binding entity.
+
+Elaborating entity <mux21> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\mux21.vhd" Line 35: <inv> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\mux21.vhd" Line 36: <and2> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\mux21.vhd" Line 37: <or2> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\one_bit_alu.vhd" Line 44: <and2> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\one_bit_alu.vhd" Line 45: <or2> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\one_bit_alu.vhd" Line 48: <xor3> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task2\one_bit_alu.vhd" Line 46: <or3> remains a black-box since it has no binding entity.
+
+Elaborating entity <mux> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task1\mux.vhd" Line 47: <inv> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task1\mux.vhd" Line 48: <and3> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "E:\Lab 1\Task1\mux.vhd" Line 49: <or4> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:634 - "E:\Lab 1\Task2\one_bit_alu.vhd" Line 41: Net <mux_d4> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <eight_bit_adder>.
+    Related source file is "E:\Lab 1\Task3\eight_bit_adder.vhd".
+INFO:Xst:3210 - "E:\Lab 1\Task3\eight_bit_adder.vhd" line 50: Output port <CarryOut> of the instance <U8> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <eight_bit_adder> synthesized.
+
+Synthesizing Unit <one_bit_alu>.
+    Related source file is "E:\Lab 1\Task2\one_bit_alu.vhd".
+WARNING:Xst:653 - Signal <mux_d4> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <one_bit_alu> synthesized.
+
+Synthesizing Unit <mux21>.
+    Related source file is "E:\Lab 1\Task2\mux21.vhd".
+    Summary:
+	no macro.
+Unit <mux21> synthesized.
+
+Synthesizing Unit <mux>.
+    Related source file is "E:\Lab 1\Task1\mux.vhd".
+    Summary:
+	no macro.
+Unit <mux> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <eight_bit_adder> ...
+
+Optimizing unit <one_bit_alu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block eight_bit_adder, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : eight_bit_adder.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 193
+#      AND2                        : 64
+#      AND3                        : 32
+#      GND                         : 1
+#      INV                         : 48
+#      OR2                         : 24
+#      OR3                         : 8
+#      OR4                         : 8
+#      XOR3                        : 8
+# IO Buffers                       : 30
+#      IBUF                        : 21
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   48  out of  63400     0%  
+    Number used as Logic:                48  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     48
+   Number with an unused Flip Flop:      48  out of     48   100%  
+   Number with an unused LUT:             0  out of     48     0%  
+   Number of fully used LUT-FF pairs:     0  out of     48     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          30
+ Number of bonded IOBs:                  30  out of    210    14%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 16.247ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 4481 / 9
+-------------------------------------------------------------------------
+Delay:               16.247ns (Levels of Logic = 22)
+  Source:            A_inv (PAD)
+  Destination:       Result<7> (PAD)
+
+  Data Path: A_inv to Result<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   0.001   0.348  A_inv_IBUF (A_inv_IBUF)
+     INV:I->O              1   0.511   0.693  U1/U3/U1 (U1/U3/S0_L)
+     AND2:I0->O            1   0.097   0.683  U1/U3/U3 (U1/U3/S0L_AND_D0)
+     OR2:I1->O             5   0.107   0.712  U1/U3/U4 (U1/AM)
+     AND2:I0->O            1   0.097   0.693  U1/U7 (U1/CIN_AND_AM)
+     OR3:I0->O             4   0.097   0.697  U1/U11 (CarryOut_OBUF)
+     AND2:I1->O            1   0.107   0.693  U2/U7 (U2/CIN_AND_AM)
+     OR3:I0->O             3   0.097   0.693  U2/U11 (CarryOut2)
+     AND2:I1->O            1   0.107   0.693  U3/U7 (U3/CIN_AND_AM)
+     OR3:I0->O             3   0.097   0.693  U3/U11 (CarryOut3)
+     AND2:I1->O            1   0.107   0.693  U4/U7 (U4/CIN_AND_AM)
+     OR3:I0->O             3   0.097   0.693  U4/U11 (CarryOut4)
+     AND2:I1->O            1   0.107   0.693  U5/U7 (U5/CIN_AND_AM)
+     OR3:I0->O             3   0.097   0.693  U5/U11 (CarryOut5)
+     AND2:I1->O            1   0.107   0.693  U6/U7 (U6/CIN_AND_AM)
+     OR3:I0->O             3   0.097   0.693  U6/U11 (CarryOut6)
+     AND2:I1->O            1   0.107   0.693  U7/U7 (U7/CIN_AND_AM)
+     OR3:I0->O             3   0.097   0.566  U7/U11 (CarryOut7)
+     XOR3:I2->O            1   0.234   0.556  U8/U10 (U8/AM_CIN_XOR_BM)
+     AND3:I2->O            1   0.234   0.556  U8/U12/U5 (U8/U12/S1_S0L_D2)
+     OR4:I2->O             1   0.234   0.279  U8/U12/U7 (Result_7_OBUF)
+     OBUF:I->O                 0.000          Result_7_OBUF (Result<7>)
+    ----------------------------------------
+    Total                     16.247ns (2.836ns logic, 13.411ns route)
+                                       (17.5% logic, 82.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.74 secs
+ 
+--> 
+
+Total memory usage is 4634164 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   13 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

@@ -1,0 +1,4 @@
+work	"../Task1/mux.vhd"
+work	"../Task2/mux21.vhd"
+work	"../Task2/one_bit_alu.vhd"
+work	"eight_bit_adder.vhd"

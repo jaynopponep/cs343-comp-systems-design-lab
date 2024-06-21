@@ -1,0 +1,5 @@
+vhdl work "../Task2/mux21.vhd"
+vhdl work "../Task1/mux.vhd"
+vhdl work "../Task2/one_bit_alu.vhd"
+vhdl work "eight_bit_adder.vhd"
+vhdl work "eight_bit_testbench.vhd"

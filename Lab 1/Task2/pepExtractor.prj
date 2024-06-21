@@ -1,0 +1,3 @@
+work	"../Task1/mux.vhd"
+work	"mux21.vhd"
+work	"one_bit_alu.vhd"

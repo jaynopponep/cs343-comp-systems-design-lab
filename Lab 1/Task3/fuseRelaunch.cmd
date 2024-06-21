@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "E:/Lab 1/Task3/eightbit_testbench_isim_beh.exe" -prj "E:/Lab 1/Task3/eightbit_testbench_beh.prj" "work.eightbit_testbench" 

@@ -1,0 +1,4 @@
+vhdl isim_temp "mux21.vhd"
+vhdl isim_temp "../Task1/mux.vhd"
+vhdl isim_temp "one_bit_alu.vhd"
+vhdl isim_temp "alu_testbench.vhd"

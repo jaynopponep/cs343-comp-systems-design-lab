@@ -1,0 +1,5 @@
+vhdl isim_temp "../Task2/mux21.vhd"
+vhdl isim_temp "../Task1/mux.vhd"
+vhdl isim_temp "../Task2/one_bit_alu.vhd"
+vhdl isim_temp "eight_bit_adder.vhd"
+vhdl isim_temp "eight_bit_testbench.vhd"

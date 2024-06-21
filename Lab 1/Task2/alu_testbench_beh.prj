@@ -1,0 +1,4 @@
+vhdl work "mux21.vhd"
+vhdl work "../Task1/mux.vhd"
+vhdl work "one_bit_alu.vhd"
+vhdl work "alu_testbench.vhd"

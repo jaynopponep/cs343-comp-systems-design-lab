@@ -1,0 +1,146 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : alu_schematic.vf
+// /___/   /\     Timestamp : 06/13/2024 19:21:19
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog "E:/Lab 1/Task3/alu_schematic.vf" -w "E:/Lab 1/Task2/alu_schematic.sch"
+//Design Name: alu_schematic
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module M4_1E_HXILINX_alu_schematic (O, D0, D1, D2, D3, E, S0, S1);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  D2;
+   input  D3;
+   input  E;
+   input  S0;
+   input  S1;
+
+   reg O;
+
+   always @ ( D0 or D1 or D2 or D3 or E or S0 or S1)
+   begin
+      if(!E)
+      O <= 1'b0;
+      else 
+      begin
+        case({S1,S0})
+        2'b00 : O <= D0;
+        2'b01 : O <= D1;
+        2'b10 : O <= D2;
+        2'b11 : O <= D3;
+        endcase
+      end
+   end
+    
+endmodule
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_alu_schematic (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module alu_schematic(OUTPUT);
+
+   output OUTPUT;
+   
+   wire A;
+   wire A_INVERT;
+   wire B;
+   wire B_INVERT;
+   wire CARRY_IN;
+   wire CARRY_OUT;
+   wire OP0;
+   wire OP1;
+   wire XLXN_5;
+   wire XLXN_6;
+   wire XLXN_33;
+   wire XLXN_40;
+   wire XLXN_41;
+   wire XLXN_42;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   
+   INV  XLXI_1 (.I(A), 
+               .O(XLXN_5));
+   INV  XLXI_2 (.I(B), 
+               .O(XLXN_6));
+   (* HU_SET = "XLXI_3_0" *) 
+   M2_1_HXILINX_alu_schematic  XLXI_3 (.D0(B), 
+                                      .D1(XLXN_6), 
+                                      .S0(B_INVERT), 
+                                      .O(XLXN_33));
+   (* HU_SET = "XLXI_4_1" *) 
+   M2_1_HXILINX_alu_schematic  XLXI_4 (.D0(A), 
+                                      .D1(XLXN_5), 
+                                      .S0(A_INVERT), 
+                                      .O(CARRY_IN));
+   AND2  XLXI_5 (.I0(XLXN_33), 
+                .I1(CARRY_IN), 
+                .O(XLXN_44));
+   OR2  XLXI_6 (.I0(XLXN_33), 
+               .I1(CARRY_IN), 
+               .O(XLXN_45));
+   AND2  XLXI_10 (.I0(CARRY_IN), 
+                 .I1(CARRY_IN), 
+                 .O(XLXN_40));
+   AND2  XLXI_11 (.I0(XLXN_33), 
+                 .I1(CARRY_IN), 
+                 .O(XLXN_41));
+   AND2  XLXI_12 (.I0(XLXN_33), 
+                 .I1(CARRY_IN), 
+                 .O(XLXN_42));
+   XOR3  XLXI_17 (.I0(XLXN_33), 
+                 .I1(CARRY_IN), 
+                 .I2(CARRY_IN), 
+                 .O(XLXN_46));
+   OR3  XLXI_19 (.I0(XLXN_42), 
+                .I1(XLXN_41), 
+                .I2(XLXN_40), 
+                .O(CARRY_OUT));
+   (* HU_SET = "XLXI_20_2" *) 
+   M4_1E_HXILINX_alu_schematic  XLXI_20 (.D0(XLXN_44), 
+                                        .D1(XLXN_45), 
+                                        .D2(XLXN_46), 
+                                        .D3(), 
+                                        .E(), 
+                                        .S0(OP0), 
+                                        .S1(OP1), 
+                                        .O(OUTPUT));
+endmodule
