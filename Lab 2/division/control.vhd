@@ -19,10 +19,7 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 library UNISIM;
 use UNISIM.VComponents.all;
@@ -39,22 +36,43 @@ entity control is
 end control;
 
 architecture Behavioral of control is
-
+	type division_state is (INIT, SHIFT, SUBTRACT, UPDATE, STOP_OR_RESTART);
+	signal state : division_state := INIT;
 begin
-	process(I_CTL_CLK, I_CTL_EN)
+	process(I_CTL_CLK)
 	begin 
-	-- this control will only be triggered when we have to shift and update the register
-	-- basically when the ALU computes that the subtraction is successful, or B-A > 0
-	-- which will require for the register to be updated. 
-		if I_CTL_CLK='1' and I_CTL_EN='1' then
-			O_CTL_ALU <= '1';
-			O_CTL_RMD <= '1';
-			O_CTL_SLL <= '1';
-			O_CTL_INI <= '1';
-			-- Two cases: 
-			-- Subtraction: Shift register to left && overwrite quotient with difference
-			-- cannot subtract: Shift register to left
-		else null;
+		if rising_edge(I_CTL_CLK) then
+			if I_CTL_EN='1' then
+				if state = INIT then state <= SHIFT;
+				elsif state = SHIFT then state <= SUBTRACT;
+				elsif state = SUBTRACT then state <= UPDATE;
+				elsif state = UPDATE then state <= STOP_OR_RESTART;
+				elsif state = STOP_OR_RESTART then
+						state <= SHIFT;
+				end if;
+			else
+				if state = INIT then state <= INIT;
+				end if;
+			end if;
+		end if;
+	end process;
+	process(state)
+	begin
+		O_CTL_INI <= '0'; O_CTL_ALU <= '0'; O_CTL_RMD <= '0'; O_CTL_SLL <= '0'; 
+		if state = INIT then
+			O_CTL_INI <= '1'; O_CTL_ALU <= '0'; O_CTL_RMD <= '0'; O_CTL_SLL <= '0'; 
+			-- initialization
+		elsif state = SHIFT then
+			O_CTL_SLL <= '1'; O_CTL_ALU <= '0'; O_CTL_INI<= '0'; O_CTL_RMD <='0'; 
+			-- shift first
+		elsif state = SUBTRACT then
+			O_CTL_ALU <='1'; O_CTL_RMD <='0'; O_CTL_INI <='0'; O_CTL_SLL <= '0';
+			-- subtraction
+		elsif state = UPDATE then
+			O_CTL_RMD <='1'; O_CTL_ALU <='0'; O_CTL_INI <='0'; O_CTL_SLL<= '0';
+			-- update remainder
+		elsif state = STOP_OR_RESTART then
+			O_CTL_INI <= '0'; O_CTL_ALU <= '0'; O_CTL_RMD <= '0'; O_CTL_SLL <= '0'; 
 		end if;
 	end process;
 end Behavioral;

@@ -1,0 +1,5 @@
+vhdl work "div_register.vhd"
+vhdl work "divider_alu.vhd"
+vhdl work "control.vhd"
+vhdl work "divider.vhd"
+vhdl work "help_me_please.vhd"

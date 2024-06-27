@@ -1,0 +1,4 @@
+work	"control.vhd"
+work	"div_register.vhd"
+work	"divider.vhd"
+work	"divider_alu.vhd"

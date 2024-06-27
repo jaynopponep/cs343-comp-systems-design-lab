@@ -1,0 +1,4 @@
+vhdl isim_temp "div_register.vhd"
+vhdl isim_temp "divider_alu.vhd"
+vhdl isim_temp "control.vhd"
+vhdl isim_temp "divider.vhd"

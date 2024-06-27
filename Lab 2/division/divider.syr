@@ -1,0 +1,666 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: divider.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "divider.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "divider"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : divider
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\School\Lab 2\division\div_register.vhd" into library work
+Parsing entity <div_register>.
+Parsing architecture <Behavioral> of entity <div_register>.
+Parsing VHDL file "E:\School\Lab 2\division\divider_alu.vhd" into library work
+Parsing entity <divider_alu>.
+Parsing architecture <Behavioral> of entity <divider_alu>.
+Parsing VHDL file "E:\School\Lab 2\division\control.vhd" into library work
+Parsing entity <control>.
+Parsing architecture <Behavioral> of entity <control>.
+Parsing VHDL file "E:\School\Lab 2\division\divider.vhd" into library work
+Parsing entity <divider>.
+Parsing architecture <Behavioral> of entity <divider>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <divider> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <control> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <divider_alu> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <div_register> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 58: flag should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 59: temp_hi should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 60: temp_lo should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 62: temp_lo should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 63: temp_lo should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 67: flag should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 68: temp_lo should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "E:\School\Lab 2\division\div_register.vhd" Line 70: temp_lo should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <divider>.
+    Related source file is "E:\School\Lab 2\division\divider.vhd".
+    Summary:
+	no macro.
+Unit <divider> synthesized.
+
+Synthesizing Unit <control>.
+    Related source file is "E:\School\Lab 2\division\control.vhd".
+    Found 3-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 7                                              |
+    | Clock              | I_CTL_CLK (rising_edge)                        |
+    | Power Up State     | init                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <control> synthesized.
+
+Synthesizing Unit <divider_alu>.
+    Related source file is "E:\School\Lab 2\division\divider_alu.vhd".
+    Found 6-bit subtractor for signal <GND_7_o_GND_7_o_sub_2_OUT<5:0>> created at line 49.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Flag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <O_ALU_Out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 6-bit comparator lessequal for signal <n0000> created at line 48
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   7 Latch(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <divider_alu> synthesized.
+
+Synthesizing Unit <div_register>.
+    Related source file is "E:\School\Lab 2\division\div_register.vhd".
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_hi<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_hi<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_hi<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_hi<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_hi<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_lo<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_lo<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_lo<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_lo<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_lo<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_lo<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <temp_hi<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred  12 Latch(s).
+	inferred  19 Multiplexer(s).
+Unit <div_register> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit subtractor                                      : 1
+# Latches                                              : 19
+ 1-bit latch                                           : 19
+# Comparators                                          : 1
+ 6-bit comparator lessequal                            : 1
+# Multiplexers                                         : 23
+ 1-bit 2-to-1 multiplexer                              : 22
+ 6-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 6-bit subtractor                                      : 1
+# Comparators                                          : 1
+ 6-bit comparator lessequal                            : 1
+# Multiplexers                                         : 23
+ 1-bit 2-to-1 multiplexer                              : 22
+ 6-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:3]> with user encoding.
+-----------------------------
+ State           | Encoding
+-----------------------------
+ init            | 000
+ shift           | 001
+ subtract        | 010
+ update          | 011
+ stop_or_restart | 100
+-----------------------------
+
+Optimizing unit <divider> ...
+
+Optimizing unit <div_register> ...
+
+Optimizing unit <divider_alu> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block divider, actual ratio is 0.
+Latch U3/temp_hi_0 has been replicated 1 time(s) to handle iob=true attribute.
+Latch U3/temp_lo_1 has been replicated 1 time(s) to handle iob=true attribute.
+Latch U3/temp_lo_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : divider.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 47
+#      LUT2                        : 9
+#      LUT3                        : 10
+#      LUT4                        : 3
+#      LUT5                        : 7
+#      LUT6                        : 6
+#      MUXCY                       : 5
+#      VCC                         : 1
+#      XORCY                       : 6
+# FlipFlops/Latches                : 25
+#      FD                          : 3
+#      LD                          : 15
+#      LDC                         : 7
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 25
+#      IBUF                        : 13
+#      OBUF                        : 12
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              22  out of  126800     0%  
+ Number of Slice LUTs:                   35  out of  63400     0%  
+    Number used as Logic:                35  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     35
+   Number with an unused Flip Flop:      13  out of     35    37%  
+   Number with an unused LUT:             0  out of     35     0%  
+   Number of fully used LUT-FF pairs:    22  out of     35    62%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          26
+ Number of bonded IOBs:                  26  out of    210    12%  
+    IOB Flip Flops/Latches:               3
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                       | Clock buffer(FF name)  | Load  |
+-------------------------------------------------------------------+------------------------+-------+
+I_CLK                                                              | BUFGP                  | 3     |
+U1/state_FSM_FFd3                                                  | NONE(U3/temp_hi_5)     | 7     |
+U3/I_REG_Init_I_REG_SLL_OR_9_o(U3/I_REG_Init_I_REG_SLL_OR_9_o1:O)  | NONE(*)(U3/temp_lo_5)  | 6     |
+U3/I_REG_Init_I_REG_SLL_OR_15_o(U3/I_REG_Init_I_REG_SLL_OR_15_o1:O)| NONE(*)(U3/temp_lo_0)  | 2     |
+CONTROL_TO_ALU(U1/Mmux_O_CTL_ALU11:O)                              | NONE(*)(U2/O_ALU_Out_5)| 7     |
+-------------------------------------------------------------------+------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 1.019ns (Maximum Frequency: 981.740MHz)
+   Minimum input arrival time before clock: 2.300ns
+   Maximum output required time after clock: 0.770ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'I_CLK'
+  Clock period: 1.019ns (frequency: 981.740MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               1.019ns (Levels of Logic = 1)
+  Source:            U1/state_FSM_FFd1 (FF)
+  Destination:       U1/state_FSM_FFd1 (FF)
+  Source Clock:      I_CLK rising
+  Destination Clock: I_CLK rising
+
+  Data Path: U1/state_FSM_FFd1 to U1/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              10   0.361   0.553  U1/state_FSM_FFd1 (U1/state_FSM_FFd1)
+     LUT4:I1->O            1   0.097   0.000  U1/state_FSM_FFd1-In1 (U1/state_FSM_FFd1-In)
+     FD:D                      0.008          U1/state_FSM_FFd1
+    ----------------------------------------
+    Total                      1.019ns (0.466ns logic, 0.553ns route)
+                                       (45.7% logic, 54.3% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'U1/state_FSM_FFd3'
+  Clock period: 0.883ns (frequency: 1132.246MHz)
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Delay:               0.883ns (Levels of Logic = 1)
+  Source:            U3/temp_hi_4 (LATCH)
+  Destination:       U3/temp_hi_5 (LATCH)
+  Source Clock:      U1/state_FSM_FFd3 falling
+  Destination Clock: U1/state_FSM_FFd3 falling
+
+  Data Path: U3/temp_hi_4 to U3/temp_hi_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              5   0.472   0.314  U3/temp_hi_4 (U3/temp_hi_4)
+     LUT6:I5->O            1   0.097   0.000  U3/Mmux_temp_hi[5]_I_REG_ALU[4]_MUX_39_o11 (U3/temp_hi[5]_I_REG_ALU[4]_MUX_39_o)
+     LDC:D                    -0.028          U3/temp_hi_5
+    ----------------------------------------
+    Total                      0.883ns (0.569ns logic, 0.314ns route)
+                                       (64.4% logic, 35.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'U3/I_REG_Init_I_REG_SLL_OR_9_o'
+  Clock period: 0.868ns (frequency: 1151.411MHz)
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Delay:               0.868ns (Levels of Logic = 1)
+  Source:            U3/temp_lo_4 (LATCH)
+  Destination:       U3/temp_lo_5 (LATCH)
+  Source Clock:      U3/I_REG_Init_I_REG_SLL_OR_9_o falling
+  Destination Clock: U3/I_REG_Init_I_REG_SLL_OR_9_o falling
+
+  Data Path: U3/temp_lo_4 to U3/temp_lo_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.472   0.299  U3/temp_lo_4 (U3/temp_lo_4)
+     LUT5:I4->O            1   0.097   0.000  U3/Mmux_temp_lo[5]_I_REG_Div[5]_MUX_51_o11 (U3/temp_lo[5]_I_REG_Div[5]_MUX_51_o)
+     LD:D                     -0.028          U3/temp_lo_5
+    ----------------------------------------
+    Total                      0.868ns (0.569ns logic, 0.299ns route)
+                                       (65.5% logic, 34.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'I_CLK'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              0.672ns (Levels of Logic = 2)
+  Source:            I_EN (PAD)
+  Destination:       U1/state_FSM_FFd1 (FF)
+  Destination Clock: I_CLK rising
+
+  Data Path: I_EN to U1/state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.001   0.566  I_EN_IBUF (I_EN_IBUF)
+     LUT4:I0->O            1   0.097   0.000  U1/state_FSM_FFd1-In1 (U1/state_FSM_FFd1-In)
+     FD:D                      0.008          U1/state_FSM_FFd1
+    ----------------------------------------
+    Total                      0.672ns (0.106ns logic, 0.566ns route)
+                                       (15.8% logic, 84.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U3/I_REG_Init_I_REG_SLL_OR_9_o'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              0.781ns (Levels of Logic = 2)
+  Source:            I_Dividend<5> (PAD)
+  Destination:       U3/temp_lo_5 (LATCH)
+  Destination Clock: U3/I_REG_Init_I_REG_SLL_OR_9_o falling
+
+  Data Path: I_Dividend<5> to U3/temp_lo_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.683  I_Dividend_5_IBUF (I_Dividend_5_IBUF)
+     LUT5:I0->O            1   0.097   0.000  U3/Mmux_temp_lo[5]_I_REG_Div[5]_MUX_51_o11 (U3/temp_lo[5]_I_REG_Div[5]_MUX_51_o)
+     LD:D                     -0.028          U3/temp_lo_5
+    ----------------------------------------
+    Total                      0.781ns (0.098ns logic, 0.683ns route)
+                                       (12.5% logic, 87.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U3/I_REG_Init_I_REG_SLL_OR_15_o'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.609ns (Levels of Logic = 2)
+  Source:            I_Dividend<0> (PAD)
+  Destination:       U3/temp_lo_0 (LATCH)
+  Destination Clock: U3/I_REG_Init_I_REG_SLL_OR_15_o falling
+
+  Data Path: I_Dividend<0> to U3/temp_lo_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.511  I_Dividend_0_IBUF (I_Dividend_0_IBUF)
+     LUT5:I2->O            2   0.097   0.000  U3/Mmux_flag111 (U3/temp_lo[5]_I_REG_Div[0]_MUX_63_o)
+     LD:D                     -0.028          U3/temp_lo_0
+    ----------------------------------------
+    Total                      0.609ns (0.098ns logic, 0.511ns route)
+                                       (16.1% logic, 83.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CONTROL_TO_ALU'
+  Total number of paths / destination ports: 63 / 7
+-------------------------------------------------------------------------
+Offset:              2.300ns (Levels of Logic = 5)
+  Source:            I_Divisor<2> (PAD)
+  Destination:       U2/O_ALU_Out_5 (LATCH)
+  Destination Clock: CONTROL_TO_ALU falling
+
+  Data Path: I_Divisor<2> to U2/O_ALU_Out_5
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.001   0.697  I_Divisor_2_IBUF (I_Divisor_2_IBUF)
+     LUT6:I0->O            1   0.097   0.295  U2/I_ALU_A[5]_I_ALU_B[5]_LessThan_1_o2 (U2/I_ALU_A[5]_I_ALU_B[5]_LessThan_1_o1)
+     LUT3:I2->O            1   0.097   0.379  U2/I_ALU_A[5]_I_ALU_B[5]_LessThan_1_o1_SW4 (N7)
+     LUT5:I3->O            7   0.097   0.539  U2/I_ALU_A[5]_I_ALU_B[5]_LessThan_1_o1 (U2/I_ALU_A[5]_I_ALU_B[5]_LessThan_1_o)
+     LUT3:I0->O            1   0.097   0.000  U2/Mmux_I_ALU_B[5]_GND_7_o_mux_2_OUT11 (U2/I_ALU_B[5]_GND_7_o_mux_2_OUT<0>)
+     LD:D                     -0.028          U2/O_ALU_Out_0
+    ----------------------------------------
+    Total                      2.300ns (0.389ns logic, 1.911ns route)
+                                       (16.9% logic, 83.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U1/state_FSM_FFd3'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              0.770ns (Levels of Logic = 1)
+  Source:            U3/temp_hi_4 (LATCH)
+  Destination:       O_Remainder<4> (PAD)
+  Source Clock:      U1/state_FSM_FFd3 falling
+
+  Data Path: U3/temp_hi_4 to O_Remainder<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              5   0.472   0.298  U3/temp_hi_4 (U3/temp_hi_4)
+     OBUF:I->O                 0.000          O_Remainder_4_OBUF (O_Remainder<4>)
+    ----------------------------------------
+    Total                      0.770ns (0.472ns logic, 0.298ns route)
+                                       (61.3% logic, 38.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U3/I_REG_Init_I_REG_SLL_OR_9_o'
+  Total number of paths / destination ports: 5 / 5
+-------------------------------------------------------------------------
+Offset:              0.755ns (Levels of Logic = 1)
+  Source:            U3/temp_lo_5 (LATCH)
+  Destination:       O_Quotient<5> (PAD)
+  Source Clock:      U3/I_REG_Init_I_REG_SLL_OR_9_o falling
+
+  Data Path: U3/temp_lo_5 to O_Quotient<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               2   0.472   0.283  U3/temp_lo_5 (U3/temp_lo_5)
+     OBUF:I->O                 0.000          O_Quotient_5_OBUF (O_Quotient<5>)
+    ----------------------------------------
+    Total                      0.755ns (0.472ns logic, 0.283ns route)
+                                       (62.5% logic, 37.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U3/I_REG_Init_I_REG_SLL_OR_15_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.751ns (Levels of Logic = 1)
+  Source:            U3/temp_lo_0_1 (LATCH)
+  Destination:       O_Quotient<0> (PAD)
+  Source Clock:      U3/I_REG_Init_I_REG_SLL_OR_15_o falling
+
+  Data Path: U3/temp_lo_0_1 to O_Quotient<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.472   0.279  U3/temp_lo_0_1 (U3/temp_lo_0_1)
+     OBUF:I->O                 0.000          O_Quotient_0_OBUF (O_Quotient<0>)
+    ----------------------------------------
+    Total                      0.751ns (0.472ns logic, 0.279ns route)
+                                       (62.8% logic, 37.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CONTROL_TO_ALU
+-----------------+---------+---------+---------+---------+
+                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------+---------+---------+---------+---------+
+U1/state_FSM_FFd3|         |         |    2.776|         |
+-----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock I_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+I_CLK          |    1.019|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock U1/state_FSM_FFd3
+------------------------------+---------+---------+---------+---------+
+                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------+---------+---------+---------+---------+
+CONTROL_TO_ALU                |         |         |    1.266|         |
+I_CLK                         |         |         |    1.743|         |
+U1/state_FSM_FFd3             |         |         |    0.883|         |
+U3/I_REG_Init_I_REG_SLL_OR_9_o|         |         |    0.868|         |
+------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock U3/I_REG_Init_I_REG_SLL_OR_15_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CONTROL_TO_ALU |         |         |    0.892|         |
+I_CLK          |         |         |    1.237|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock U3/I_REG_Init_I_REG_SLL_OR_9_o
+-------------------------------+---------+---------+---------+---------+
+                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------+---------+---------+---------+---------+
+I_CLK                          |         |         |    1.110|         |
+U3/I_REG_Init_I_REG_SLL_OR_15_o|         |         |    1.252|         |
+U3/I_REG_Init_I_REG_SLL_OR_9_o |         |         |    0.868|         |
+-------------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.54 secs
+ 
+--> 
+
+Total memory usage is 4634180 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   27 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

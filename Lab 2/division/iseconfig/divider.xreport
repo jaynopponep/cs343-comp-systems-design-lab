@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2024-06-20T16:50:51</DateModified>
+  <DateModified>2024-06-26T19:22:03</DateModified>
   <ModuleName>divider</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2024-06-26T13:04:19</SummaryTimeStamp>
   <SavedFilePath>E:/School/Lab 2/division/iseconfig/divider.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>E:/School/Lab 2/division</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>E:/School/Lab 2/division\</ImplementationReportsDirectory>
   <DateInitialized>2024-06-20T16:50:50</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
