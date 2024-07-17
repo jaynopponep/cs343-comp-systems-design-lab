@@ -1,0 +1,3 @@
+vhdl work "DEC.vhd"
+vhdl work "ACU.vhd"
+vhdl work "Test_Module.vhd"

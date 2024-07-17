@@ -1,0 +1,22 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o E:/School/Lab 5/lab_5/REG_TEST_BENCH_isim_beh.exe -prj E:/School/Lab 5/lab_5/REG_TEST_BENCH_beh.prj work.REG_TEST_BENCH 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "E:/School/Lab 5/lab_5/REG.vhd" into library work
+Parsing VHDL file "E:/School/Lab 5/lab_5/REG_TEST_BENCH.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package vcomponents
+Compiling package textio
+Compiling package std_logic_textio
+Compiling architecture behavioral of entity REG [reg_default]
+Compiling architecture behavior of entity reg_test_bench
+Time Resolution for simulation is 1ps.
+Compiled 9 VHDL Units
+Built simulation executable E:/School/Lab 5/lab_5/REG_TEST_BENCH_isim_beh.exe
+Fuse Memory Usage: 50648 KB
+Fuse CPU Usage: 656 ms

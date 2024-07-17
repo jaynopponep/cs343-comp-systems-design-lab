@@ -1,0 +1,2 @@
+vhdl work "REG.vhd"
+vhdl work "REG_TEST_BENCH.vhd"

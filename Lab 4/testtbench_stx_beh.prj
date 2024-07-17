@@ -1,0 +1,4 @@
+vhdl isim_temp "DEC.vhd"
+vhdl isim_temp "ACU.vhd"
+vhdl isim_temp "Test_Module.vhd"
+vhdl isim_temp "testtbench.vhd"
